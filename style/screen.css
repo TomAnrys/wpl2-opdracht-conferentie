@@ -1,0 +1,61 @@
+body {
+    font-family: 'Arimo', sans-serif;
+}
+nav li{
+    display: inline;
+    position: relative;
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+}
+header{
+    background-color: #005887;
+}
+body{
+    padding-left: 0% !important;
+    padding-right: 0% !important;
+}
+.col-12{
+    padding-left: 0% ;
+    padding-right: 0%;
+}
+header.col-12{
+    padding-left: 6rem ;
+    padding-right: 6rem;
+}
+.row{
+    margin: 0%;
+}
+input{
+    font-size: 2rem;
+    line-height: 0.5rem;
+}
+header div.col-3{
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+header li{
+    line-height: 7rem;
+}
+header ul{
+    margin: 0%;
+}
+header a{
+    color: white;
+    font-size: 1.2rem;
+}
+header li.active a{
+    color: #20eda3;
+    font-size: 1.2rem;
+}
+header a:hover{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+header form{
+    line-height: 7.5rem;
+}
+header button{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
