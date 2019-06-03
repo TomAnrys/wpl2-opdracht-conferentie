@@ -1,0 +1,110 @@
+body {
+    font-family: 'Arimo', sans-serif;
+}
+nav li{
+    display: inline;
+    position: relative;
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+}
+header{
+    background-color: #005887;
+}
+body{
+    padding-left: 0% !important;
+    padding-right: 0% !important;
+}
+.col-12{
+    padding-left: 0% ;
+    padding-right: 0%;
+}
+header.col-12{
+    padding-left: 6rem ;
+    padding-right: 6rem;
+}
+.row{
+    margin: 0%;
+}
+input{
+    font-size: 2rem;
+    line-height: 0.5rem;
+}
+header div.col-3{
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+header li{
+    line-height: 7rem;
+}
+header ul{
+    margin: 0%;
+}
+header a{
+    color: white;
+    font-size: 1.2rem;
+}
+header li.active a{
+    color: #20eda3;
+    font-size: 1.2rem;
+}
+header a:hover{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+header form{
+    line-height: 7.5rem;
+}
+header button{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+footer{
+    background-color: #005887;
+    color: white;
+}
+footer.col-12{
+    padding-left: 6rem ;
+    padding-right: 6rem;
+}
+footer hr{
+    color: white;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    border-top: 1.5px solid white;
+}
+footer p{
+    margin: 0rem;
+}
+footer div i{
+    margin-right: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    color: white;
+}
+main div.carousel{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.carousel-inner{
+    height: 25rem;
+}
+.carousel-indicators li{
+   background-color: #00d7bc;
+   height: 8px;
+   width: 40px;
+   margin-left: 1rem;
+   margin-right: 1rem;
+
+}
+.carousel-indicators li.active{
+    background-color: #009fb3;
+}
+main div.col-12 h2{
+    padding-left: 6rem;
+    margin-bottom: 2rem;
+}
+main div.col-12 p{
+    padding-left: 6rem;
+    margin-bottom: 3rem;
+}
