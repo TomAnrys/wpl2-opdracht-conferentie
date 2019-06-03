@@ -108,3 +108,25 @@ main div.col-12 p{
     padding-left: 6rem;
     margin-bottom: 3rem;
 }
+main div.col-12 li{
+    display: inline;
+    position: relative;
+    margin-right: 5rem;
+}
+main div.col-12 ul{
+    margin-bottom: 0rem;
+}
+main div#sorteren{
+    background-color: #00d7bc;
+    padding-left: 6rem ;
+    padding-right: 6rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+main div#sorteren a:hover{
+    color: black;
+    text-decoration: none;
+}
+main div#sorteren a{
+    color: black;
+}
