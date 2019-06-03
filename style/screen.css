@@ -82,3 +82,29 @@ footer div i{
     font-size: 3rem;
     color: white;
 }
+main div.carousel{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.carousel-inner{
+    height: 25rem;
+}
+.carousel-indicators li{
+   background-color: #00d7bc;
+   height: 8px;
+   width: 40px;
+   margin-left: 1rem;
+   margin-right: 1rem;
+
+}
+.carousel-indicators li.active{
+    background-color: #009fb3;
+}
+main div.col-12 h2{
+    padding-left: 6rem;
+    margin-bottom: 2rem;
+}
+main div.col-12 p{
+    padding-left: 6rem;
+    margin-bottom: 3rem;
+}
