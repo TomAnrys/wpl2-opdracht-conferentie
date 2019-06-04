@@ -67,7 +67,163 @@ require_once ('scripts/database.php');
               <li><a href="#">Meest populair</a></li>
             </ul>
             </div>
-        
+            <section class="row" id="bevat">
+
+            <div class="col-3">
+              <div class="persoon">
+              <img src="images/placeholder.png" class="img-fluid">
+                <h2>Speaker</h2>
+                <div class=" row">
+                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p class="col-2">11 likes</p>
+                </div>
+                <div class="row col-12">
+                <div class="col-2">
+                <p><i class="far fa-heart"></i></p>
+                </div>
+                <div class="col-9 text-right">
+                  <button>More Info</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="persoon">
+              <img src="images/placeholder.png" class="img-fluid">
+                <h2>Speaker</h2>
+                <div class=" row">
+                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p class="col-2">11 likes</p>
+                </div>
+                <div class="row col-12">
+                <div class="col-2">
+                <p><i class="far fa-heart"></i></p>
+                </div>
+                <div class="col-9 text-right">
+                  <button>More Info</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="persoon">
+              <img src="images/placeholder.png" class="img-fluid">
+                <h2>Speaker</h2>
+                <div class=" row">
+                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p class="col-2">11 likes</p>
+                </div>
+                <div class="row col-12">
+                <div class="col-2">
+                <p><i class="far fa-heart"></i></p>
+                </div>
+                <div class="col-9 text-right">
+                  <button>More Info</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="persoon">
+              <img src="images/placeholder.png" class="img-fluid">
+                <h2>Speaker</h2>
+                <div class=" row">
+                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p class="col-2">11 likes</p>
+                </div>
+                <div class="row col-12">
+                <div class="col-2">
+                <p><i class="far fa-heart"></i></p>
+                </div>
+                <div class="col-9 text-right">
+                  <button>More Info</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="persoon">
+              <img src="images/placeholder.png" class="img-fluid">
+                <h2>Speaker</h2>
+                <div class=" row">
+                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p class="col-2">11 likes</p>
+                </div>
+                <div class="row col-12">
+                <div class="col-2">
+                <p><i class="far fa-heart"></i></p>
+                </div>
+                <div class="col-9 text-right">
+                  <button>More Info</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="persoon">
+              <img src="images/placeholder.png" class="img-fluid">
+                <h2>Speaker</h2>
+                <div class=" row">
+                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p class="col-2">11 likes</p>
+                </div>
+                <div class="row col-12">
+                <div class="col-2">
+                <p><i class="far fa-heart"></i></p>
+                </div>
+                <div class="col-9 text-right">
+                  <button>More Info</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="persoon">
+              <img src="images/placeholder.png" class="img-fluid">
+                <h2>Speaker</h2>
+                <div class=" row">
+                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p class="col-2">11 likes</p>
+                </div>
+                <div class="row col-12">
+                <div class="col-2">
+                <p><i class="far fa-heart"></i></p>
+                </div>
+                <div class="col-9 text-right">
+                  <button>More Info</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="persoon">
+              <img src="images/placeholder.png" class="img-fluid">
+                <h2>Speaker</h2>
+                <div class=" row">
+                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p class="col-2">11 likes</p>
+                </div>
+                <div class="row col-12">
+                <div class="col-2">
+                <p><i class="far fa-heart"></i></p>
+                </div>
+                <div class="col-9 text-right">
+                  <button>More Info</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+
+            
+        </section>
     </main> 
 
     <footer class="row col-12">

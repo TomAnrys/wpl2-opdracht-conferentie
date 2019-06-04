@@ -8,11 +8,17 @@ $mysqli= new mysqli('localhost', 'conferentie', 'conferentie', 'conference');
 if ($mysqli->connect_errno) {
     // In dit geval laat je de gebruiker best iets weten
     echo "Sorry, this website is experiencing connection problems.";
+    // Dit doe je best niet op een publieke website
+    echo "Error: Failed to make a MySQL connection, here is why: \n";
+    echo "Errno: " . $mysqli->connect_errno . "\n";
+    echo "Error: " . $mysqli->connect_errorh . "\n";
 
 
     // Je zou de gebruiker naar een mooie foutpagina kunnen brengen, of gewoon
     // stoppen
     exit;
+}else{
+    $mysqli->set_charset('utf8');
 }
 
 ?>
