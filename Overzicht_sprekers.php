@@ -53,7 +53,7 @@ if (!$resSprekers = $mysqli ->query($sqlSprekers)){
             <ul class="list-unstyled">
               <li><a href="index.html">Home</a></li>
               <li class="active"><a href="Overzicht_sprekers.php">Sprekers</a></li>
-              <li><a href="#">Schedule</a></li>
+              <li><a href="Overzicht_zalen.php">Schedule</a></li>
               <li><a href="#">Sponsors</a></li>
               <li><a href="#">Tickets</a></li>
             </ul>

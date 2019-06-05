@@ -186,3 +186,37 @@ div.col-1 i{
 .persoon div.col-9{
     padding-right: 0rem;
 }
+div.sessies{
+    padding-left: 6rem;
+    padding-right: 6rem; 
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.sessies .zaal{
+    background-color: #009fb3;
+    color: white;
+    height: 35px;
+}
+.sessies .col-12 p{
+    padding-left: 1rem;
+    padding-top: 6px;
+    margin-bottom: 0rem;
+}
+.sessies .col-2{
+    padding-left: 2rem;
+}
+.sessies .col-2 p{
+    margin-top: 1rem;
+}
+.sessies .col-9{
+    padding: 0rem;
+}
+.sessies .col-9 p{
+    margin-top: 1rem;
+}
+.sessies hr{
+    margin: 0rem;
+}
+.sessies .row{
+    height: 45px;
+}
