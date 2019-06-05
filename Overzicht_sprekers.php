@@ -1,6 +1,14 @@
 <?php
 require_once ('scripts/database.php');
 
+$sqlSprekers = "SELECT naam, voornaam, afbeelding, bio FROM sprekers WHERE afbeelding IS NOT NULL";
+
+if (!$resSprekers = $mysqli ->query($sqlSprekers)){
+  echo "Oeps, een query foutje op DB voor opzoeken van spreker";
+  print("<p>Error: " . $mysqli->error . "</p>");
+  exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -69,162 +77,36 @@ require_once ('scripts/database.php');
             </div>
             <section class="row" id="bevat">
 
-            <div class="col-3">
-              <div class="persoon">
-              <img src="images/placeholder.png" class="img-fluid">
-                <h2>Speaker</h2>
-                <div class=" row">
-                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <p class="col-2">11 likes</p>
-                </div>
-                <div class="row col-12">
-                <div class="col-2">
-                <p><i class="far fa-heart"></i></p>
-                </div>
-                <div class="col-9 text-right">
-                  <button>More Info</button>
-                </div>
-                </div>
-              </div>
-            </div>
+            <?php
+            while ($row = $resSprekers->fetch_assoc()) {
+              $tempAfbeelding = $row['afbeelding'];
+              $tempAchternaam = $row['naam'];
+              $tempVoornaam = $row['voornaam'];
+              $tempBio = $row['bio'];
 
-            <div class="col-3">
-              <div class="persoon">
-              <img src="images/placeholder.png" class="img-fluid">
-                <h2>Speaker</h2>
-                <div class=" row">
-                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <p class="col-2">11 likes</p>
-                </div>
-                <div class="row col-12">
-                <div class="col-2">
-                <p><i class="far fa-heart"></i></p>
-                </div>
-                <div class="col-9 text-right">
-                  <button>More Info</button>
-                </div>
-                </div>
-              </div>
-            </div>
+              print('<div class="col-3">');
+              print('<div class="persoon">');
+              print('<img src="images/images/speakers/x250/' . $tempAfbeelding . '"class="img-fluid">');
+              print('<h2>'. $tempAchternaam .' '. $tempVoornaam .'</h2>');
+              print('<div class=" row">');
+              print(' <p class="col-10">' . $tempBio .'</p>');
+              print('<p class="col-2">11 likes</p>');
+              print('</div>');
+              print('<div class="row col-12">');
+              print('<div class="col-2">');
+              print('<p><i class="far fa-heart"></i></p>');
+              print('</div>');
+              print('<div class="col-9 text-right">');
+              print('<button>More Info</button>');
+              print('</div>');
+              print('</div>');
+              print('</div>');
+              print('</div>');
+            }
+          ?>
 
-            <div class="col-3">
-              <div class="persoon">
-              <img src="images/placeholder.png" class="img-fluid">
-                <h2>Speaker</h2>
-                <div class=" row">
-                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <p class="col-2">11 likes</p>
-                </div>
-                <div class="row col-12">
-                <div class="col-2">
-                <p><i class="far fa-heart"></i></p>
-                </div>
-                <div class="col-9 text-right">
-                  <button>More Info</button>
-                </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-3">
-              <div class="persoon">
-              <img src="images/placeholder.png" class="img-fluid">
-                <h2>Speaker</h2>
-                <div class=" row">
-                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <p class="col-2">11 likes</p>
-                </div>
-                <div class="row col-12">
-                <div class="col-2">
-                <p><i class="far fa-heart"></i></p>
-                </div>
-                <div class="col-9 text-right">
-                  <button>More Info</button>
-                </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-3">
-              <div class="persoon">
-              <img src="images/placeholder.png" class="img-fluid">
-                <h2>Speaker</h2>
-                <div class=" row">
-                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <p class="col-2">11 likes</p>
-                </div>
-                <div class="row col-12">
-                <div class="col-2">
-                <p><i class="far fa-heart"></i></p>
-                </div>
-                <div class="col-9 text-right">
-                  <button>More Info</button>
-                </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-3">
-              <div class="persoon">
-              <img src="images/placeholder.png" class="img-fluid">
-                <h2>Speaker</h2>
-                <div class=" row">
-                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <p class="col-2">11 likes</p>
-                </div>
-                <div class="row col-12">
-                <div class="col-2">
-                <p><i class="far fa-heart"></i></p>
-                </div>
-                <div class="col-9 text-right">
-                  <button>More Info</button>
-                </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-3">
-              <div class="persoon">
-              <img src="images/placeholder.png" class="img-fluid">
-                <h2>Speaker</h2>
-                <div class=" row">
-                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <p class="col-2">11 likes</p>
-                </div>
-                <div class="row col-12">
-                <div class="col-2">
-                <p><i class="far fa-heart"></i></p>
-                </div>
-                <div class="col-9 text-right">
-                  <button>More Info</button>
-                </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-3">
-              <div class="persoon">
-              <img src="images/placeholder.png" class="img-fluid">
-                <h2>Speaker</h2>
-                <div class=" row">
-                <p class="col-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                <p class="col-2">11 likes</p>
-                </div>
-                <div class="row col-12">
-                <div class="col-2">
-                <p><i class="far fa-heart"></i></p>
-                </div>
-                <div class="col-9 text-right">
-                  <button>More Info</button>
-                </div>
-                </div>
-              </div>
-            </div>
-
-
-            
-        </section>
-    </main> 
+          </section>
+      </main> 
 
     <footer class="row col-12">
         <div class="col-3">
@@ -260,11 +142,5 @@ require_once ('scripts/database.php');
           <a href="https://www.linkedin.com/uas/login?_l=nl"><i class="fab fa-linkedin"></i></a>
         </div>
       </footer>
-
-
-
-
-
-
-
-</body>
+  </body>
+</html>

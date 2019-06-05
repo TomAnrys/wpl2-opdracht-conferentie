@@ -146,6 +146,9 @@ div.persoon{
 }
 .persoon img{
     padding: 1rem;
+    display: block;
+    margin: 0 auto;
+    
 }
 .persoon h2{
     padding-left: 1rem;
