@@ -1,16 +1,3 @@
-<?php
-require_once ('scripts/database.php');
-
-$sqlSprekers = "SELECT naam, voornaam, afbeelding, bio FROM sprekers WHERE afbeelding IS NOT NULL";
-
-if (!$resSprekers = $mysqli ->query($sqlSprekers)){
-  echo "Oeps, een query foutje op DB voor opzoeken van spreker";
-  print("<p>Error: " . $mysqli->error . "</p>");
-  exit();
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,8 +39,8 @@ if (!$resSprekers = $mysqli ->query($sqlSprekers)){
           <nav>
             <ul class="list-unstyled">
               <li><a href="index.html">Home</a></li>
-              <li class="active"><a href="Overzicht_sprekers.php">Sprekers</a></li>
-              <li><a href="Overzicht_zalen.php">Schedule</a></li>
+              <li><a href="Overzicht_sprekers.php">Sprekers</a></li>
+              <li class="active"><a href="Overzicht_zalen.php">Schedule</a></li>
               <li><a href="#">Sponsors</a></li>
               <li><a href="#">Tickets</a></li>
             </ul>
@@ -67,48 +54,27 @@ if (!$resSprekers = $mysqli ->query($sqlSprekers)){
         </div>
       </header>
 
-      <main class="col-12">
-      <div class="col-12" id="sorteren">
-          <ul class="list-unstyled">
-              <li><a href="#">Nieuwste</a></li>
-              <li><a href="#">Meeste likes</a></li>
-              <li><a href="#">Meest populair</a></li>
-            </ul>
+      <main>
+        <div class="s_detail">
+            <h1>Sessie titel</h1>
+            <h2>Spreker</h2>
+            <div class="row">
+                <div class="col-6 text">
+                    <h3>Room, 16:00h - 17:00h</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="col-6">
+                    <img src="images/thon-hotel-vettre-konferanse-konferansesal-7.jpg" class="img-fluid">
+                </div>
+
             </div>
-            <section class="row" id="bevat">
+        </div>
+        
 
-            <?php
-            while ($row = $resSprekers->fetch_assoc()) {
-              $tempAfbeelding = $row['afbeelding'];
-              $tempAchternaam = $row['naam'];
-              $tempVoornaam = $row['voornaam'];
-              $tempBio = $row['bio'];
+        </main>
 
-              print('<div class="col-3">');
-              print('<div class="persoon">');
-              print('<img src="images/images/speakers/x250/' . $tempAfbeelding . '"class="img-fluid">');
-              print('<h2>'. $tempAchternaam .' '. $tempVoornaam .'</h2>');
-              print('<div class=" row">');
-              print(' <p class="col-10">' . $tempBio .'</p>');
-              print('<p class="col-2">11 likes</p>');
-              print('</div>');
-              print('<div class="row col-12">');
-              print('<div class="col-2">');
-              print('<p><i class="far fa-heart"></i></p>');
-              print('</div>');
-              print('<div class="col-9 text-right">');
-              print('<button>More Info</button>');
-              print('</div>');
-              print('</div>');
-              print('</div>');
-              print('</div>');
-            }
-          ?>
 
-          </section>
-      </main> 
-
-    <footer class="row col-12">
+      <footer class="row col-12">
         <div class="col-3">
           <h1>Openingsuren</h1>
         </div>

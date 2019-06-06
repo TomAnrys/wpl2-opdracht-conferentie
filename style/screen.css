@@ -131,6 +131,39 @@ main div#sorteren a:hover{
 main div#sorteren a{
     color: black;
 }
+main div.s_detail{
+    padding-left: 6rem;
+    padding-top: 3rem;
+    padding-right: 6rem;
+}
+main div.s_detail h1{
+    font-size: 3rem;
+}
+main div.s_detail h2{
+    font-size: 2.5rem;
+    padding-left: 0rem;
+}
+main div.s_detail .text{
+    padding-left: 1rem;
+    margin-top: 2rem;
+    padding-right: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+main div.s_detail h3{
+    font-size: 2rem;
+}
+main div.s_detail img{
+    margin-top: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+main div.s_detail p{
+    font-size: 1.2rem;
+}
+main div.s_detail .text{
+    border: solid black 1px;
+}
 div.persoon{
     border: solid black 1px;
     border-radius: 10px;
@@ -185,4 +218,44 @@ div.col-1 i{
 }
 .persoon div.col-9{
     padding-right: 0rem;
+}
+div.sessies{
+    padding-left: 6rem;
+    padding-right: 6rem; 
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.sessies .zaal{
+    background-color: #009fb3;
+    color: white;
+    height: 35px;
+}
+.sessies .col-12 p{
+    padding-left: 1rem;
+    padding-top: 6px;
+    margin-bottom: 0rem;
+}
+.sessies .col-2{
+    padding-left: 2rem;
+}
+.sessies .col-2 p{
+    margin-top: 1rem;
+}
+.sessies .col-7{
+    padding: 0rem;
+}
+.sessies .col-7 p{
+    margin-top: 1rem;
+}
+.sessies .col-7 a{
+    color: black;
+}
+.sessies hr{
+    margin: 0rem;
+}
+.sessies .row{
+    height: 45px;
+}
+.sessies i{
+    padding: 1.1rem;
 }

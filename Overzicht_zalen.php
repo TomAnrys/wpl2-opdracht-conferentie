@@ -1,9 +1,9 @@
 <?php
 require_once ('scripts/database.php');
 
-$sqlSprekers = "SELECT naam, voornaam, afbeelding, bio FROM sprekers WHERE afbeelding IS NOT NULL";
+$sqlSessies = "SELECT titel, start , naam FROM sessies INNER JOIN zalen ON sessies.zaalID = zalen.idzalen ORDER BY start";
 
-if (!$resSprekers = $mysqli ->query($sqlSprekers)){
+if (!$resSessies = $mysqli ->query($sqlSessies)){
   echo "Oeps, een query foutje op DB voor opzoeken van spreker";
   print("<p>Error: " . $mysqli->error . "</p>");
   exit();
@@ -52,8 +52,8 @@ if (!$resSprekers = $mysqli ->query($sqlSprekers)){
           <nav>
             <ul class="list-unstyled">
               <li><a href="index.html">Home</a></li>
-              <li class="active"><a href="Overzicht_sprekers.php">Sprekers</a></li>
-              <li><a href="Overzicht_zalen.php">Schedule</a></li>
+              <li><a href="Overzicht_sprekers.php">Sprekers</a></li>
+              <li class="active"><a href="Overzicht_zalen.php">Schedule</a></li>
               <li><a href="#">Sponsors</a></li>
               <li><a href="#">Tickets</a></li>
             </ul>
@@ -67,48 +67,38 @@ if (!$resSprekers = $mysqli ->query($sqlSprekers)){
         </div>
       </header>
 
-      <main class="col-12">
-      <div class="col-12" id="sorteren">
-          <ul class="list-unstyled">
-              <li><a href="#">Nieuwste</a></li>
-              <li><a href="#">Meeste likes</a></li>
-              <li><a href="#">Meest populair</a></li>
-            </ul>
-            </div>
-            <section class="row" id="bevat">
+      <main>
+        <div class="sessies">
 
-            <?php
-            while ($row = $resSprekers->fetch_assoc()) {
-              $tempAfbeelding = $row['afbeelding'];
-              $tempAchternaam = $row['naam'];
-              $tempVoornaam = $row['voornaam'];
-              $tempBio = $row['bio'];
+        <?php
+            while ($row = $resSessies->fetch_assoc()) {
+              $temptitel = $row['titel'];
+              $tempstart = $row['start'];
+              $tempzaalID = $row['naam'];
 
-              print('<div class="col-3">');
-              print('<div class="persoon">');
-              print('<img src="images/images/speakers/x250/' . $tempAfbeelding . '"class="img-fluid">');
-              print('<h2>'. $tempAchternaam .' '. $tempVoornaam .'</h2>');
-              print('<div class=" row">');
-              print(' <p class="col-10">' . $tempBio .'</p>');
-              print('<p class="col-2">11 likes</p>');
+              print('<div class="col-12 zaal">');
+              print('<p>' . $tempzaalID . '</p>');
               print('</div>');
-              print('<div class="row col-12">');
+              print('<div class="row">');
               print('<div class="col-2">');
-              print('<p><i class="far fa-heart"></i></p>');
+              print('<p>' . $tempstart . '</p>');
               print('</div>');
-              print('<div class="col-9 text-right">');
-              print('<button>More Info</button>');
+              print('<div class="col-1">');
+              print('</div>');
+              print('<div class="col-7">');
+              print('<p> <a href="detail_sessie.php">' . $temptitel . '</p>');
+              print('</div>');
+              print('<div class="col-2 text-right">');
+              print('<a href="admin/update_sessie.php"><i class="fas fa-edit"></i></a><a href="admin/delete_sessie.php"><i class="fas fa-trash"></i></a> ');
               print('</div>');
               print('</div>');
-              print('</div>');
-              print('</div>');
-            }
-          ?>
+              print('<hr class="col-12"></hr>');
+               }
+              ?>
+              
+          </main>
 
-          </section>
-      </main> 
-
-    <footer class="row col-12">
+      <footer class="row col-12">
         <div class="col-3">
           <h1>Openingsuren</h1>
         </div>
