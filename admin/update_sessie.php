@@ -1,14 +1,25 @@
 <?php
 require_once ('scripts/database.php');
 
-$sqlSessies = "SELECT titel, start , naam FROM sessies INNER JOIN zalen ON sessies.zaalID = zalen.idzalen ORDER BY start";
+$stmt = $mysqli ->prepare("UPDATE sessies SET titel=?, start=?, naam=? WHERE id=?");
 
-if (!$resSessies = $mysqli ->query($sqlSessies)){
-  echo "Oeps, een query foutje op DB voor opzoeken van spreker";
-  print("<p>Error: " . $mysqli->error . "</p>");
-  exit();
+if($mysqli->error!==""){
+    print("<p>Error: ".$mysqli->error."</p>");
+ }
+ $stmt->bind_param($titel, $start, $naam);
+
+ $titel = $_POST['titel'];
+ $start = $_POST['start'];
+ $naam = $_POST['naam'];
+
+ $stmt->execute();
+ if(count($stmt->error_list)){
+    print("<pre>");
+    print_r($stmt->error_list);
+    print("</pre>");
 }
-
+$stmt->close();
+header("location:Overzicht_zalen.php");
 ?>
 
 <!DOCTYPE html>
@@ -68,35 +79,9 @@ if (!$resSessies = $mysqli ->query($sqlSessies)){
       </header>
 
       <main>
-        <div class="sessies">
 
-        <?php
-            while ($row = $resSessies->fetch_assoc()) {
-              $temptitel = $row['titel'];
-              $tempstart = $row['start'];
-              $tempzaalID = $row['naam'];
+        </main>
 
-              print('<div class="col-12 zaal">');
-              print('<p>' . $tempzaalID . '</p>');
-              print('</div>');
-              print('<div class="row">');
-              print('<div class="col-2">');
-              print('<p>' . $tempstart . '</p>');
-              print('</div>');
-              print('<div class="col-1">');
-              print('</div>');
-              print('<div class="col-7">');
-              print('<p> <a href="detail_sessie.php">' . $temptitel . '</p>');
-              print('</div>');
-              print('<div class="col-2 text-right">');
-              print('<a href="admin/update_sessie.php"><i class="fas fa-edit"></i></a><a href="admin/delete_sessie.php"><i class="fas fa-trash"></i></a> ');
-              print('</div>');
-              print('</div>');
-              print('<hr class="col-12"></hr>');
-               }
-              ?>
-              
-          </main>
 
       <footer class="row col-12">
         <div class="col-3">

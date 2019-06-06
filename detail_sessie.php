@@ -1,16 +1,3 @@
-<?php
-require_once ('scripts/database.php');
-
-$sqlSessies = "SELECT titel, start , naam FROM sessies INNER JOIN zalen ON sessies.zaalID = zalen.idzalen ORDER BY start";
-
-if (!$resSessies = $mysqli ->query($sqlSessies)){
-  echo "Oeps, een query foutje op DB voor opzoeken van spreker";
-  print("<p>Error: " . $mysqli->error . "</p>");
-  exit();
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -68,35 +55,24 @@ if (!$resSessies = $mysqli ->query($sqlSessies)){
       </header>
 
       <main>
-        <div class="sessies">
+        <div class="s_detail">
+            <h1>Sessie titel</h1>
+            <h2>Spreker</h2>
+            <div class="row">
+                <div class="col-6 text">
+                    <h3>Room, 16:00h - 17:00h</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="col-6">
+                    <img src="images/thon-hotel-vettre-konferanse-konferansesal-7.jpg" class="img-fluid">
+                </div>
 
-        <?php
-            while ($row = $resSessies->fetch_assoc()) {
-              $temptitel = $row['titel'];
-              $tempstart = $row['start'];
-              $tempzaalID = $row['naam'];
+            </div>
+        </div>
+        
 
-              print('<div class="col-12 zaal">');
-              print('<p>' . $tempzaalID . '</p>');
-              print('</div>');
-              print('<div class="row">');
-              print('<div class="col-2">');
-              print('<p>' . $tempstart . '</p>');
-              print('</div>');
-              print('<div class="col-1">');
-              print('</div>');
-              print('<div class="col-7">');
-              print('<p> <a href="detail_sessie.php">' . $temptitel . '</p>');
-              print('</div>');
-              print('<div class="col-2 text-right">');
-              print('<a href="admin/update_sessie.php"><i class="fas fa-edit"></i></a><a href="admin/delete_sessie.php"><i class="fas fa-trash"></i></a> ');
-              print('</div>');
-              print('</div>');
-              print('<hr class="col-12"></hr>');
-               }
-              ?>
-              
-          </main>
+        </main>
+
 
       <footer class="row col-12">
         <div class="col-3">

@@ -131,6 +131,39 @@ main div#sorteren a:hover{
 main div#sorteren a{
     color: black;
 }
+main div.s_detail{
+    padding-left: 6rem;
+    padding-top: 3rem;
+    padding-right: 6rem;
+}
+main div.s_detail h1{
+    font-size: 3rem;
+}
+main div.s_detail h2{
+    font-size: 2.5rem;
+    padding-left: 0rem;
+}
+main div.s_detail .text{
+    padding-left: 1rem;
+    margin-top: 2rem;
+    padding-right: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+main div.s_detail h3{
+    font-size: 2rem;
+}
+main div.s_detail img{
+    margin-top: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+main div.s_detail p{
+    font-size: 1.2rem;
+}
+main div.s_detail .text{
+    border: solid black 1px;
+}
 div.persoon{
     border: solid black 1px;
     border-radius: 10px;
@@ -213,6 +246,9 @@ div.sessies{
 }
 .sessies .col-7 p{
     margin-top: 1rem;
+}
+.sessies .col-7 a{
+    color: black;
 }
 .sessies hr{
     margin: 0rem;
