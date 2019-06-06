@@ -1,3 +1,16 @@
+<?php
+require_once ('scripts/database.php');
+
+$sqlSessies = "SELECT titel, start , naam FROM sessies INNER JOIN zalen ON sessies.zaalID = zalen.idzalen";
+
+if (!$resSessies = $mysqli ->query($sqlSessies)){
+  echo "Oeps, een query foutje op DB voor opzoeken van spreker";
+  print("<p>Error: " . $mysqli->error . "</p>");
+  exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,173 +69,34 @@
 
       <main>
         <div class="sessies">
-            <div class="col-12 zaal">
-                <p>Room</p>
-            </div>
-        <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-        
-        </div>
-        <div class="sessies">
-            <div class="col-12 zaal">
-                <p>Room</p>
-            </div>
-        <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-            <div class="row">
-           <div class="col-2">
-                <p>16:00h - 17:00h</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col-9">
-                <p>Session Title</p>
-            </div>
-        </div>
-            <hr class="col-12"></hr>
-        
-        </div>
 
-        </main>
+        <?php
+            while ($row = $resSessies->fetch_assoc()) {
+              $temptitel = $row['titel'];
+              $tempstart = $row['start'];
+              $tempzaalID = $row['naam'];
+
+              print('<div class="col-12 zaal">');
+              print('<p>' . $tempzaalID . '</p>');
+              print('</div>');
+              print('<div class="row">');
+              print('<div class="col-2">');
+              print('<p>' . $tempstart . '</p>');
+              print('</div>');
+              print('<div class="col-1">');
+              print('</div>');
+              print('<div class="col-7">');
+              print('<p>' . $temptitel . '</p>');
+              print('</div>');
+              print('<div class="col-2 text-right">');
+              print('<a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a> ');
+              print('</div>');
+              print('</div>');
+              print('<hr class="col-12"></hr>');
+               }
+              ?>
+              
+          </main>
 
       <footer class="row col-12">
         <div class="col-3">

@@ -208,10 +208,10 @@ div.sessies{
 .sessies .col-2 p{
     margin-top: 1rem;
 }
-.sessies .col-9{
+.sessies .col-7{
     padding: 0rem;
 }
-.sessies .col-9 p{
+.sessies .col-7 p{
     margin-top: 1rem;
 }
 .sessies hr{
@@ -219,4 +219,7 @@ div.sessies{
 }
 .sessies .row{
     height: 45px;
+}
+.sessies i{
+    padding: 1.1rem;
 }
