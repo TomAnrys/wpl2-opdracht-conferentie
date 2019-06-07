@@ -1,7 +1,7 @@
 <?php
 require_once ('scripts/database.php');
 
-$sqlSprekers = "SELECT naam, voornaam, afbeelding, bio FROM sprekers WHERE afbeelding IS NOT NULL";
+$sqlSprekers = "SELECT naam, voornaam, afbeelding, bio, idsprekers FROM sprekers WHERE afbeelding IS NOT NULL";
 
 if (!$resSprekers = $mysqli ->query($sqlSprekers)){
   echo "Oeps, een query foutje op DB voor opzoeken van spreker";
@@ -83,6 +83,7 @@ if (!$resSprekers = $mysqli ->query($sqlSprekers)){
               $tempAchternaam = $row['naam'];
               $tempVoornaam = $row['voornaam'];
               $tempBio = $row['bio'];
+              $tempID = $row['idsprekers'];
 
               print('<div class="col-3">');
               print('<div class="persoon">');
@@ -97,7 +98,7 @@ if (!$resSprekers = $mysqli ->query($sqlSprekers)){
               print('<p><i class="far fa-heart"></i></p>');
               print('</div>');
               print('<div class="col-9 text-right">');
-              print('<button>More Info</button>');
+              print('<a href="detail_spreker.php?idsprekers='.$tempID.'"><button>More Info</button></a>');
               print('</div>');
               print('</div>');
               print('</div>');

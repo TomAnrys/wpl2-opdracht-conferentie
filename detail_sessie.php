@@ -1,3 +1,17 @@
+<?php
+require_once ('scripts/database.php');
+
+$sqlSessie = "SELECT titel, start , z.naam,sp.voornaam, omschrijving  FROM sessies s INNER JOIN zalen z ON s.zaalID = z.idzalen INNER JOIN sprekers sp ON s.sprekerID = sp.idsprekers ORDER BY start";
+
+if (!$resSessie = $mysqli ->query($sqlSessie)){
+  echo "Oeps, een query foutje op DB voor opzoeken van spreker";
+  print("<p>Error: " . $mysqli->error . "</p>");
+  exit();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,23 +69,34 @@
       </header>
 
       <main>
-        <div class="s_detail">
-            <h1>Sessie titel</h1>
-            <h2>Spreker</h2>
-            <div class="row">
-                <div class="col-6 text">
-                    <h3>Room, 16:00h - 17:00h</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div class="col-6">
-                    <img src="images/thon-hotel-vettre-konferanse-konferansesal-7.jpg" class="img-fluid">
-                </div>
+      <div class="se_detail">
 
-            </div>
-        </div>
+      <?php
+            while ($row = $resSessie->fetch_assoc()) {
+              $temptitel = $row['titel'];
+              $tempstart = $row['start'];
+              $tempzaalID = $row['naam'];
+              $tempVoornaam = $row['voornaam'];
+              $tempOmschrijving = $row['omschrijving'];
+
+              
+              print('<h1>' . $temptitel . '</h1>');              
+              print('<h2>' . $tempVoornaam . '</h2>');
+              print('<div class="row">');
+              print('<div class="col-6 text">');
+              print('<h3>' . $tempzaalID . ',' . $tempstart . '</h3>');
+              print('<p>' . $tempOmschrijving . '</p>');
+              print('</div>');
+              print('<div class="col-6">');
+              print('<img src="images/thon-hotel-vettre-konferanse-konferansesal-7.jpg" class="img-fluid">');
+              print('</div>');
+              print('</div>');
+
+               }
+              ?>
+      </div>
         
-
-        </main>
+</main>
 
 
       <footer class="row col-12">
