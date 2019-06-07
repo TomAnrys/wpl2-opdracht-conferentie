@@ -1,3 +1,15 @@
+<?php
+require_once ('scripts/database.php');
+
+$sqlSpreker = "SELECT naam, voornaam, afbeelding, bio, voluit FROM sprekers INNER JOIN landen ON sprekers.lanidID = landen.idlanden";
+
+if (!$resSpreker = $mysqli ->query($sqlSpreker)){
+  echo "Oeps, een query foutje op DB voor opzoeken van spreker";
+  print("<p>Error: " . $mysqli->error . "</p>");
+  exit();
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,8 +52,8 @@
           <nav>
             <ul class="list-unstyled">
               <li><a href="index.html">Home</a></li>
-              <li><a href="Overzicht_sprekers.php">Sprekers</a></li>
-              <li class="active"><a href="Overzicht_zalen.php">Schedule</a></li>
+              <li class="active"><a href="Overzicht_sprekers.php">Sprekers</a></li>
+              <li><a href="Overzicht_zalen.php">Schedule</a></li>
               <li><a href="#">Sponsors</a></li>
               <li><a href="#">Tickets</a></li>
             </ul>
@@ -56,7 +68,46 @@
       </header>
 
       <main>
+        <div class=" row sp_detail">
+        <?php
 
+            if(isset($_GET['idsprekers'])) {
+                $gekozenID = $_GET['idsprekers'];
+            }
+            else{
+                $gekozenID = -1;
+            }
+
+            while ($row = $resSpreker->fetch_assoc()) {
+                $tempAchternaam = $row['naam'];
+                $tempVoornaam = $row['voornaam'];
+                $tempAfbeelding = $row['afbeelding'];
+                $tempBio = $row['bio'];
+                $tempVoluit = $row['voluit'];
+                
+                
+                
+                print('<div class="col-5">');
+                print('<img src="images/images/speakers/x500/' . $tempAfbeelding . '"class="img-fluid">'); 
+                print('<p><a href="#"><i class="far fa-heart"></a></i>'); 
+                print('<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>'); 
+                print('<a href="https://twitter.com/home"><i class="fab fa-twitter"></i></a>'); 
+                print('11 likes</p>'); 
+                print('</div>'); 
+                print('<div class="col-1">'); 
+                print('</div>'); 
+                print('<div class="col-6">'); 
+                print('<h1>'. $tempAchternaam .' '. $tempVoornaam .'</h1>'); 
+                print('<h2>' .$tempVoluit .'</h2>'); 
+                print('<h3>Bio</h3>'); 
+                print('<p>'. $tempBio .' </p>');
+                print('</div>');
+                
+                
+            }
+                
+        ?>
+        </div>
         </main>
 
 

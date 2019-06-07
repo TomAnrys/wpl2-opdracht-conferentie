@@ -131,38 +131,73 @@ main div#sorteren a:hover{
 main div#sorteren a{
     color: black;
 }
-main div.s_detail{
+main div.se_detail{
     padding-left: 6rem;
     padding-top: 3rem;
     padding-right: 6rem;
 }
-main div.s_detail h1{
+main div.se_detail h1{
     font-size: 3rem;
 }
-main div.s_detail h2{
+main div.se_detail h2{
     font-size: 2.5rem;
     padding-left: 0rem;
 }
-main div.s_detail .text{
+main div.se_detail .text{
     padding-left: 1rem;
     margin-top: 2rem;
     padding-right: 1rem;
     border-radius: 10px;
     margin-bottom: 2rem;
 }
-main div.s_detail h3{
+main div.se_detail h3{
     font-size: 2rem;
 }
-main div.s_detail img{
+main div.se_detail img{
     margin-top: 2rem;
     padding-left: 2rem;
     padding-bottom: 2rem;
 }
-main div.s_detail p{
+main div.se_detail p{
     font-size: 1.2rem;
 }
-main div.s_detail .text{
+main div.se_detail .text{
     border: solid black 1px;
+}
+main div.sp_detail{
+    padding-left: 6rem;
+    padding-top: 3rem;
+    padding-right: 6rem;
+}
+main div.sp_detail h1{
+    font-size: 3rem;
+}
+main div.sp_detail h2{
+    font-size: 2.5rem;
+    padding-left: 0rem;
+    padding-top: 1rem;
+}
+main div.sp_detail h3{
+    font-size: 2rem;
+    padding-top: 3rem;
+}
+main div.sp_detail p{
+    font-size: 1.2rem;
+    padding-right: 3rem;
+    margin-bottom: 2rem;
+}
+main div.sp_detail img{
+    padding-bottom: 2rem;
+    
+}
+main div.sp_detail .col-5{
+    padding-left: 7rem;
+    padding-right: 0rem;
+}
+main div.sp_detail .col-5 a{
+    color: black;
+    font-size: 3rem;
+    padding-right: 3rem;
 }
 div.persoon{
     border: solid black 1px;
@@ -215,6 +250,9 @@ div.col-1 i{
     color: white;
     border-radius: 10px;
     border: solid white 1px;
+}
+.persoon button:hover{
+    border: solid #005887 1px;
 }
 .persoon div.col-9{
     padding-right: 0rem;
